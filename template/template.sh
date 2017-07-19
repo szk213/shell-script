@@ -13,6 +13,8 @@ set -u
 #
 ###########################################################################
 
+readonly INSTALL_FAIL_MESSAGE='faild install'
+
 err() {
       echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
 }
@@ -24,7 +26,7 @@ install_script() {
 
 install_script_fail() {
     # エラー処理
-    err 'Error !'
+    err "${INSTALL_FAIL_MESSAGE}"
     exit 1
 }
 
